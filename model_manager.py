@@ -1,7 +1,11 @@
+from model_type import ModelType
+
+
 class ModelManager:
 
-    def __init__(self):
+    def __init__(self, model_type: ModelType):
         self.models = []
+        self.model_type = model_type
 
     def add_model(self, model):
         self.models.append(model)
