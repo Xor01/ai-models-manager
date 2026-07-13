@@ -1,15 +1,16 @@
 from InvalidPromptError import InvalidPromptError
 from LoggingMixin import LoggingMixin
 from language_model import LanguageModel
+from model_type import ModelType
 
 
 class GPTModel(LanguageModel, LoggingMixin):
 
-    def __init__(self, model_name: str, provider: str, max_tokens: int, temperature: int, api_key: str, pricing_plan=None):
-        super().__init__(model_name, provider, max_tokens, temperature)
+    def __init__(self, model_name: str, provider: str, max_tokens: int, temperature: int, api_key: str, pricing_plan, model_type: ModelType):
+        super().__init__(model_name, provider, max_tokens, temperature, model_type)
         self.api_key = api_key
         self.pricing_plan = pricing_plan
-
+        self.model_type = model_type
     def generate_response(self, query):
         if not self.isPromptValid(query):
             raise InvalidPromptError

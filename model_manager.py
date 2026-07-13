@@ -1,13 +1,12 @@
-from model_type import ModelType
+from language_model import LanguageModel
 
 
 class ModelManager:
 
-    def __init__(self, model_type: ModelType):
-        self.models = []
-        self.model_type = model_type
+    def __init__(self):
+        self.models = [LanguageModel]
 
-    def add_model(self, model):
+    def add_model(self, model: LanguageModel):
         self.models.append(model)
 
     def remove_model(self, model):

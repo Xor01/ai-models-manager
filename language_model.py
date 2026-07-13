@@ -1,11 +1,11 @@
 from abc import ABC, abstractmethod
-import InvalidPromptError
+from model_type import ModelType
 from tokenizer import Tokenizer
 
 class LanguageModel(ABC):
     
     total_models = 0
-    def __init__(self, model_name: str, provider: str, max_tokens: int, temperature: float):
+    def __init__(self, model_name: str, provider: str, max_tokens: int, temperature: float, model_type: ModelType):
         self.model_name = model_name
         self.provider = provider
         self.max_tokens = max_tokens
@@ -13,6 +13,7 @@ class LanguageModel(ABC):
         LanguageModel.total_models +=1
         self.tokenizer = Tokenizer()
         self.__is_active = True
+        self.model_type = model_type
 
 
     @property
