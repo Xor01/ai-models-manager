@@ -3,6 +3,7 @@ from model_type import ModelType
 from tokenizer import Tokenizer
 
 class LanguageModel(ABC):
+    """Abstract base class to define the structure of a language model."""
     
     total_models = 0
     def __init__(self, model_name: str, provider: str, max_tokens: int, temperature: float, model_type: ModelType):

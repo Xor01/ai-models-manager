@@ -2,6 +2,7 @@ from language_model import LanguageModel
 
 
 class Conversation:
+    """Class to define the conversation between the user and the AI model."""
 
     def __init__(self, conversation_id, model: LanguageModel):
         self.conversation_id = conversation_id

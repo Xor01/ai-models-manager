@@ -2,7 +2,7 @@ from language_model import LanguageModel
 
 
 class ModelManager:
-
+    """"Class to manage multiple language models."""
     def __init__(self):
         self.models = [LanguageModel]
 
